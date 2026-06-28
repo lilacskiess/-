@@ -37,16 +37,17 @@ async function updateLivePanel(guild, cfg) {
         if (!msg) return;
 
         const verifyEmbed = new EmbedBuilder()
-            .setTitle('Server Verification')
+            .setTitle('rules ୨୧')
             .setDescription(cfg.message || botConfig.verification.defaultMessage)
-            .setColor(getColor('success'));
+            .setColor('#dbdbdb')
 
         const verifyButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setCustomId('verify_user')
                 .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
-                .setStyle(ButtonStyle.Success)
+                .setStyle(ButtonStyle.Secondary)
                 .setEmoji('♡'),
+            .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
         );
 
         await msg.edit({ embeds: [verifyEmbed], components: [verifyButton] });
