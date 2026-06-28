@@ -46,7 +46,7 @@ async function updateLivePanel(guild, cfg) {
                 .setCustomId('verify_user')
                 .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
                 .setStyle(ButtonStyle.Success)
-                .setEmoji('✅'),
+                .setEmoji('♡'),
         );
 
         await msg.edit({ embeds: [verifyEmbed], components: [verifyButton] });
@@ -101,17 +101,17 @@ function buildSelectMenu(guildId) {
                 .setLabel('Change Verified Role')
                 .setDescription('Set the role assigned when a user verifies')
                 .setValue('role')
-                .setEmoji('🏷️'),
+                .setEmoji('♡'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Edit Verification Message')
                 .setDescription('Customise the message shown on the verification panel embed')
                 .setValue('message')
-                .setEmoji('💬'),
+                .setEmoji('♡'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Edit Button Text')
                 .setDescription('Change the label on the verify button')
                 .setValue('button_text')
-                .setEmoji('🔘'),
+                .setEmoji('♡'),
         );
 }
 
@@ -128,7 +128,7 @@ function buildButtonRow(cfg, guildId, disabled = false, panelStatus = null) {
                 .setCustomId(`verif_cfg_repost_${guildId}`)
                 .setLabel('Repost Panel')
                 .setStyle(ButtonStyle.Primary)
-                .setEmoji('📌')
+                .setEmoji('♡')
                 .setDisabled(disabled),
         );
     }
@@ -452,16 +452,17 @@ async function handleChannel(selectInteraction, rootInteraction, cfg, guildId, c
         if (cfg.enabled !== false) {
             try {
                 const verifyEmbed = new EmbedBuilder()
-                    .setTitle('Server Verification')
+                    .setTitle('rules ୨୧')
                     .setDescription(cfg.message || botConfig.verification.defaultMessage)
-                    .setColor(getColor('success'));
+                    .setColor('#dbdbdb')
+                .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
 
                 const verifyButton = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId('verify_user')
                         .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
-                        .setStyle(ButtonStyle.Success)
-                        .setEmoji('✅'),
+                        .setStyle(ButtonStyle.Secondary)
+                        .setEmoji('♡'),
                 );
 
                 const newMsg = await newChannel.send({ embeds: [verifyEmbed], components: [verifyButton] });
