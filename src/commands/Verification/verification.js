@@ -182,9 +182,9 @@ async function handleSetup(interaction, guild, client) {
     await InteractionHelper.safeDefer(interaction);
 
     const verifyEmbed = createEmbed({
-        title: "rules:",
+        title: "rules ୨୧",
         description: message.replaceAll("|", "\n"),
-        color: "#dbdbdb"
+       color: "#dbdbdb",
         image: "https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg"
     });
 
