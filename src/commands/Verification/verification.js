@@ -182,17 +182,17 @@ async function handleSetup(interaction, guild, client) {
     await InteractionHelper.safeDefer(interaction);
 
     const verifyEmbed = createEmbed({
-        title: "Server Verification",
-        description: message,
-        color: getColor('success')
+        title: "rules:",
+        description: message.replaceAll("|", "\n"),
+        color: "#dbdbdb"
     });
 
     const verifyButton = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
             .setCustomId("verify_user")
             .setLabel(buttonText)
-            .setStyle(ButtonStyle.Success)
-            .setEmoji("✅")
+            .setStyle(ButtonStyle.Secondary)
+            .setEmoji("🤍")
     );
 
     const verifyMessage = await verificationChannel.send({
