@@ -64,7 +64,7 @@ function buildDashboardEmbed(cfg, guild, verifiedUserCount = 0, conflictSummary 
     const panelStatusValue = cfg.channelId ? formatPanelStatusField(panelStatus) : '`Not configured`';
 
     const embed = new EmbedBuilder()
-        .setTitle('✅ Verification System Dashboard')
+        .setTitle('♡ Verification System Dashboard')
         .setDescription(`Manage verification settings for **${guild.name}**.\nSelect an option below to modify a setting.`)
         .setColor(getColor('info'))
         .addFields(
@@ -96,7 +96,7 @@ function buildSelectMenu(guildId) {
                 .setLabel('Change Verification Channel')
                 .setDescription('Set the channel where the verification panel is posted')
                 .setValue('channel')
-                .setEmoji('📢'),
+                .setEmoji('♡'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Change Verified Role')
                 .setDescription('Set the role assigned when a user verifies')
@@ -138,7 +138,7 @@ function buildButtonRow(cfg, guildId, disabled = false, panelStatus = null) {
             .setCustomId(`verif_cfg_toggle_${guildId}`)
             .setLabel('Verification')
             .setStyle(systemOn ? ButtonStyle.Success : ButtonStyle.Danger)
-            .setEmoji('🔒')
+            .setEmoji('♡')
             .setDisabled(disabled),
     );
 
@@ -154,18 +154,18 @@ async function repostVerificationPanel(guild, cfg) {
             'The configured verification channel no longer exists. Set a new channel from the dashboard.',
         );
     }
-
-    const verifyEmbed = new EmbedBuilder()
-        .setTitle('Server Verification')
-        .setDescription(cfg.message || botConfig.verification.defaultMessage)
-        .setColor(getColor('success'));
+   const verifyEmbed = new EmbedBuilder()
+    .setTitle('rules ୨୧')
+    .setDescription(cfg.message || botConfig.verification.defaultMessage)
+    .setColor('#dbdbdb')
+    .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
 
     const verifyButton = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
             .setCustomId('verify_user')
             .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
-            .setStyle(ButtonStyle.Success)
-            .setEmoji('✅'),
+            .setStyle(ButtonStyle.Secondary)
+            .setEmoji('♡'),
     );
 
     return channel.send({ embeds: [verifyEmbed], components: [verifyButton] });
