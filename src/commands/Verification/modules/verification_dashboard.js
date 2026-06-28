@@ -37,17 +37,17 @@ async function updateLivePanel(guild, cfg) {
         if (!msg) return;
 
         const verifyEmbed = new EmbedBuilder()
-            .setTitle('rules ୨୧')
-            .setDescription(cfg.message || botConfig.verification.defaultMessage)
-            .setColor('#dbdbdb')
+    .setTitle('rules ୨୧')
+    .setDescription(cfg.message || botConfig.verification.defaultMessage)
+    .setColor('#dbdbdb')
+    .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
 
-        const verifyButton = new ActionRowBuilder().addComponents(
-            new ButtonBuilder()
-                .setCustomId('verify_user')
-                .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
-                .setStyle(ButtonStyle.Secondary)
-                .setEmoji('♡'),
-            .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
+      const verifyButton = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setCustomId('verify_user')
+        .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
+        .setStyle(ButtonStyle.Secondary)
+        .setEmoji('🤍')
         );
 
         await msg.edit({ embeds: [verifyEmbed], components: [verifyButton] });
