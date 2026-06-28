@@ -97,22 +97,22 @@ function buildSelectMenu(guildId) {
                 .setLabel('Change Verification Channel')
                 .setDescription('Set the channel where the verification panel is posted')
                 .setValue('channel')
-                .setEmoji('♡'),
+                .setEmoji('🤍'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Change Verified Role')
                 .setDescription('Set the role assigned when a user verifies')
                 .setValue('role')
-                .setEmoji('♡'),
+                .setEmoji('🤍'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Edit Verification Message')
                 .setDescription('Customise the message shown on the verification panel embed')
                 .setValue('message')
-                .setEmoji('♡'),
+                .setEmoji('🤍'),
             new StringSelectMenuOptionBuilder()
                 .setLabel('Edit Button Text')
                 .setDescription('Change the label on the verify button')
                 .setValue('button_text')
-                .setEmoji('♡'),
+                .setEmoji('🤍'),
         );
 }
 
@@ -129,7 +129,7 @@ function buildButtonRow(cfg, guildId, disabled = false, panelStatus = null) {
                 .setCustomId(`verif_cfg_repost_${guildId}`)
                 .setLabel('Repost Panel')
                 .setStyle(ButtonStyle.Primary)
-                .setEmoji('♡')
+                .setEmoji('🤍')
                 .setDisabled(disabled),
         );
     }
@@ -139,7 +139,7 @@ function buildButtonRow(cfg, guildId, disabled = false, panelStatus = null) {
             .setCustomId(`verif_cfg_toggle_${guildId}`)
             .setLabel('Verification')
             .setStyle(systemOn ? ButtonStyle.Success : ButtonStyle.Danger)
-            .setEmoji('♡')
+            .setEmoji('🤍')
             .setDisabled(disabled),
     );
 
@@ -166,7 +166,7 @@ async function repostVerificationPanel(guild, cfg) {
             .setCustomId('verify_user')
             .setLabel(cfg.buttonText || botConfig.verification.defaultButtonText)
             .setStyle(ButtonStyle.Secondary)
-            .setEmoji('♡'),
+            .setEmoji('🤍'),
     );
 
     return channel.send({ embeds: [verifyEmbed], components: [verifyButton] });
@@ -362,7 +362,7 @@ export default {
                     await btnInteraction.followUp({
                         embeds: [
                             successEmbed(
-                                '✅ System Updated',
+                                '🤍 System Updated',
                                 `The verification system is now **${cfg.enabled ? 'enabled' : 'disabled'}**.`,
                             ),
                         ],
