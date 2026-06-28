@@ -45,13 +45,9 @@ export async function addXp(client, guild, member, xpToAdd) {
       }
 
       if (didLevelUp) {
-        
-        if (config.announceLevelUp) {
-          await sendLevelUpAnnouncement(guild, member, levelData, config);
-        }
 
-        try {
-          await logEvent({
+       try {
+        await logEvent({
             client,
             guildId: guild.id,
             eventType: EVENT_TYPES.LEVELING_LEVELUP,
