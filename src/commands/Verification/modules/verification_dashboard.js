@@ -40,7 +40,7 @@ async function updateLivePanel(guild, cfg) {
     .setTitle('rules ୨୧')
     .setDescription(cfg.message || botConfig.verification.defaultMessage)
     .setColor('#dbdbdb')
-    .setImage('https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg');
+    .setImage('https://kommodo.ai/i/0eGRjt7jT4G8pXlAJ5Q5');
 
       const verifyButton = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
