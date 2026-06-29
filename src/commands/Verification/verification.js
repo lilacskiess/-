@@ -185,7 +185,7 @@ async function handleSetup(interaction, guild, client) {
         title: "rules ୨୧",
         description: message.replaceAll("|", "\n"),
        color: "#dbdbdb",
-        image: "https://i.ibb.co/1JXYKqB7/fb8e6d1d-7403-4cc7-8f8f-b7b10ceb4724.jpg"
+        image: "https://kommodo.ai/i/0eGRjt7jT4G8pXlAJ5Q5"
     });
 
     const verifyButton = new ActionRowBuilder().addComponents(
